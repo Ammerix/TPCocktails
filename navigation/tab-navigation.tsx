@@ -4,8 +4,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   RootStackParamList,
-  HomeStackScreen,
-  SettingsStackScreen,
+  CocktailsStackScreen,
+  IngredientsStackScreen,
 } from "./app-stacks";
 
 // Define main tab navigator
@@ -18,11 +18,11 @@ export const TabNavigator = () => {
           tabBarIcon: ({ focused, color, size }) => {
             let iconName: any; // TODO: find better type
 
-            if (route.name === "Home") {
+            if (route.name === "Cocktails") {
               iconName = focused
                 ? "ios-information-circle"
                 : "ios-information-circle-outline";
-            } else if (route.name === "Settings") {
+            } else if (route.name === "Ingredients") {
               iconName = focused ? "ios-list-sharp" : "ios-list-outline";
             }
 
@@ -31,16 +31,16 @@ export const TabNavigator = () => {
           },
         })}
         tabBarOptions={{
-          activeTintColor: "tomato",
+          activeTintColor: "purple",
           inactiveTintColor: "gray",
         }}
       >
         <Tab.Screen
-          name="Home"
-          component={HomeStackScreen}
+          name="Cocktails"
+          component={CocktailsStackScreen}
           options={{ tabBarBadge: 3 }}
         />
-        <Tab.Screen name="Settings" component={SettingsStackScreen} />
+        <Tab.Screen name="Ingredients" component={IngredientsStackScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

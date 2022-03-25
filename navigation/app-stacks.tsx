@@ -1,48 +1,48 @@
 import React from "react";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "../screens/HomeScreen";
+import CocktailsScreen from "../screens/CocktailsScreen";
 import DetailsScreen from "../screens/DetailsScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import IngredientsScreen from "../screens/IngredientsScreen";
 
 // Define view names and associated params
 // undefined = no params passed to view
 export type RootStackParamList = {
-  Home: undefined;
+  Cocktails: undefined;
   Details: undefined;
-  Settings: undefined;
+  Ingredients: undefined;
 };
 
-// Define view stack inside home tab
-const HomeStack = createStackNavigator<RootStackParamList>();
-export const HomeStackScreen = () => {
+// Define view stack inside Cocktails tab
+const CocktailsStack = createStackNavigator<RootStackParamList>();
+export const CocktailsStackScreen = () => {
   return (
-    <HomeStack.Navigator>
-      <HomeStack.Screen name="Home" component={HomeScreen} />
-      <HomeStack.Screen name="Details" component={DetailsScreen} />
-    </HomeStack.Navigator>
+    <CocktailsStack.Navigator>
+      <CocktailsStack.Screen name="Cocktails" component={CocktailsScreen} />
+      <CocktailsStack.Screen name="Details" component={DetailsScreen} />
+    </CocktailsStack.Navigator>
   );
 };
 
-// Define view stack inside settings tab
-const SettingsStack = createStackNavigator<RootStackParamList>();
-export const SettingsStackScreen = () => {
+// Define view stack inside Ingredients tab
+const IngredientsStack = createStackNavigator<RootStackParamList>();
+export const IngredientsStackScreen = () => {
   return (
-    <SettingsStack.Navigator>
-      <SettingsStack.Screen name="Settings" component={SettingsScreen} />
-      <SettingsStack.Screen name="Details" component={DetailsScreen} />
-    </SettingsStack.Navigator>
+    <IngredientsStack.Navigator>
+      <IngredientsStack.Screen name="Ingredients" component={IngredientsScreen} />
+      <IngredientsStack.Screen name="Details" component={DetailsScreen} />
+    </IngredientsStack.Navigator>
   );
 };
 
-export interface HomeScreenProps {
-  navigation: StackNavigationProp<RootStackParamList, "Home">;
+export interface CocktailsScreenProps {
+  navigation: StackNavigationProp<RootStackParamList, "Cocktails">;
 }
 
 export interface DetailsScreenProps {
   navigation: StackNavigationProp<RootStackParamList, "Details">;
 }
 
-export interface SettingsScreenProps {
-  navigation: StackNavigationProp<RootStackParamList, "Settings">;
+export interface IngredientsScreenProps {
+  navigation: StackNavigationProp<RootStackParamList, "Ingredients">;
 }

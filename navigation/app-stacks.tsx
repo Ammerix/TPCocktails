@@ -4,6 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import CocktailsScreen from "../screens/CocktailsScreen";
 import DetailsScreen from "../screens/DetailsScreen";
 import IngredientsScreen from "../screens/IngredientsScreen";
+import { StyleSheet } from "react-native";
 
 // Define view names and associated params
 // undefined = no params passed to view
@@ -29,7 +30,10 @@ const IngredientsStack = createStackNavigator<RootStackParamList>();
 export const IngredientsStackScreen = () => {
   return (
     <IngredientsStack.Navigator>
-      <IngredientsStack.Screen name="Ingredients" component={IngredientsScreen} />
+      <IngredientsStack.Screen
+        name="Ingredients"
+        component={IngredientsScreen}
+      />
       <IngredientsStack.Screen name="Details" component={DetailsScreen} />
     </IngredientsStack.Navigator>
   );
@@ -46,3 +50,11 @@ export interface DetailsScreenProps {
 export interface IngredientsScreenProps {
   navigation: StackNavigationProp<RootStackParamList, "Ingredients">;
 }
+
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "purple",
+  },
+});
+
